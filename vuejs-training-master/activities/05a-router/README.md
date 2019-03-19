@@ -1,0 +1,23 @@
+# Instructions
+
+- In this activity, we're going to add a Search page to search OMDB for movies.
+- Create a `src/services/omdb.js` file that exposes 2 APIs:
+    - `search(movieName, year, apikey)` -- searches OMDB for movies that match the name and year criteria.
+        - OMDB requires a GET to URL in this format for a search: http://www.omdbapi.com/?s=<movie>&y=<year>&apikey=<apikey>
+    - `getDetails(movieId, apikey)` -- retrieves detailed information for the movie who's ID is `movieId`.
+        - OMDB requires a GET to URL in this format: http://www.omdbapi.com/?i=<movie-id>&apikey=<apikey>
+        - Note: We'll use this API in the next exercise.
+    - For more details on the OMDB REST API, see (http://www.omdbapi.com/).
+- Add vue-router to the project.
+- Create a `routes.js` file in the login folder that has route information for the login page.
+- Create a new folder called `search`.
+- Create a `SearchPage.vue` in the `search` folder file with just a minimal `<template>` section.
+- Create a `routes.js` file in the `search` folder that has the route information for the search page.
+- Import the route information from `search` and `login` in the top level `routes.js` file, concatenate it together, and use it to initialize vue-router.
+- Add links at the top of all of the pages for the Search and Login pages.
+- On the Login page, when the user clicks the login button, navigate him to the search page.
+- Update `SearchPage.vue`.  It should have 2 input fields for Title and Year and a Search button.
+- When the user clicks the Search button, it should use the OMDB search function that you wrote to perform a search.
+- Search results should be displayed in a table below the input fields.  The results  should initially start off as hidden, and only be displayed after the user has clicked 'Search'.
+- If there are no search results, then display a message saying "No results."
+- The results table should show the title, year released, and an image of the poster.
